@@ -2,13 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/YOUR-GITHUB-USERNAME/java-cicd.git'
-            }
-        }
-
         stage('Compile') {
             steps {
                 bat 'mvn -f java-cicd/pom.xml clean compile'
